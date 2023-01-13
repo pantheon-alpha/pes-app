@@ -11,6 +11,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 
 import MainScreen from "./screens/MainScreen";
+import CompView from "./screens/views/CompView";
 
 
 
@@ -77,6 +78,9 @@ export class App extends Component {
         />
         <Stack.Navigator initialRouteName="Main">
           <Stack.Screen name="Main" component={MainScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="CompView" component={CompView} 
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
