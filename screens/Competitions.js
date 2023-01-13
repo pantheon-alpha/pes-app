@@ -1,15 +1,17 @@
-import { Text, View } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Table, Row, Rows } from 'react-native-table-component'
 
 import Competition from '../components/Competition'
 
+import compList from '../data/CompList'
+
 
 const StyledView = styled.View`
   flex: 1;
   background-color: #161616;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 `
 const Header = styled.Text`
   font-size: 48px;
@@ -69,16 +71,21 @@ export default class Competitions extends Component {
           </Tab>
         </TabContainer>
 
-        <Competition />
-        <Competition />
-        <Competition />
-        <Competition />
-        <Competition />
-        <Competition />
-        <Competition />
+        <FlatList
+          //style={{ width: '100%', borderColor: 'white', borderWidth: 2 }}
 
-
-
+          showsVerticalScrollIndicator={false}
+          data={compList}
+          renderItem={({ item, index }) => (
+            <Competition
+              navigation={this.props.navigation}
+              serial={index + 1}
+              name={item.name}
+              teams={item.teams}
+            />
+          )}
+          keyExtractor={(item, index) => index.toString()}
+        />
 
       </StyledView>
     )

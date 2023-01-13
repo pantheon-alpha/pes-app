@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/images/competitions/wing1.svg'
@@ -24,14 +24,19 @@ const StyledText = styled.Text`
 `
 
 
-export default function competition() {
+export default function competition(props) {
   return (
-    <StyledView>
-        <StyledText>1</StyledText>
-        <Logo width={30} height={35} />
-        <StyledText>PES Season 10</StyledText>
-        <StyledText>15</StyledText>
+
+    <TouchableOpacity
+      onPress={() => props.navigation.navigate('CompView', {comp: props.name})}
+    >
+      <StyledView>
+        <StyledText>{props.serial}</StyledText>
+        <Logo width={40} height={40} />
+        <StyledText>{props.name}</StyledText>
+        <StyledText>{props.teams}</StyledText>
         <KnockOut width={20} height={20} />
-    </StyledView>
+      </StyledView>
+    </TouchableOpacity>
   )
 }
