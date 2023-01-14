@@ -189,8 +189,9 @@ export default function Matchday() {
                 style={{width: '100%', height: 'auto'}}
                 showsVerticalScrollIndicator={false}
                 data={MatchdayOne}
-                renderItem={({ item }) => (
+                renderItem={({ item, index }) => (
                     <Match
+                        key={index}
                         homeTeam={item.home}
                         awayTeam={item.away}
                     />
