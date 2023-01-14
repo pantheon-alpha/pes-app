@@ -7,6 +7,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useState } from 'react'
 
 import Matchday from '../../components/competitionElements/Matchday'
+import TableSection from '../../components/competitionElements/TableSection'
+import Rules from '../../components/competitionElements/Rules'
 
 const Container = styled.View`
   flex: 1;
@@ -99,50 +101,32 @@ const CompView = (props) => {
             </HeadContainer>
             <BodyContainer>
                 <TabContainer>
-                    <Tab
-                        onPress={() => handleTab(0)}
-                    >
+                    <Tab onPress={() => handleTab(0)}>
                         <TabText>Matchday</TabText>
                     </Tab>
-                    <Tab
-                        onPress={() => handleTab(1)}
-                    >
+                    <Tab onPress={() => handleTab(1)}>
                         <TabText>Table</TabText>
                     </Tab>
-                    <Tab
-                        onPress={() => handleTab(2)}
-                    >
+                    <Tab onPress={() => handleTab(2)}>
                         <TabText>Fixtures</TabText>
                     </Tab>
-                    <Tab
-                        onPress={() => handleTab(3)}
-                    >
+                    <Tab onPress={() => handleTab(3)}>
                         <TabText>Rules</TabText>
                     </Tab>
-                    <Tab
-                        onPress={() => handleTab(4)}
-                    >
+                    <Tab onPress={() => handleTab(4)}>
                         <TabText>Teams</TabText>
                     </Tab>
                 </TabContainer>
 
-                {activeTab === 0 &&
-                    <Matchday />
-                }
-                {activeTab === 1 &&
-                    <View>
-                        <Text>Table</Text>
-                    </View>
-                }
+                {activeTab === 0 && <Matchday />}
+                {activeTab === 1 && <TableSection />}
+    
                 {activeTab === 2 &&
                     <View>
                         <Text>Fixtures</Text>
                     </View>
                 }
-                {activeTab === 3 &&
-                    <View>
-                        <Text>Rules</Text>
-                    </View>}
+                {activeTab === 3 && <Rules />}
                 {activeTab === 4 &&
                     <View>
                         <Text>Teams</Text>
