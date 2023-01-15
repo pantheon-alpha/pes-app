@@ -9,6 +9,7 @@ import { useState } from 'react'
 import Matchday from '../../components/competitionElements/Matchday'
 import TableSection from '../../components/competitionElements/TableSection'
 import Rules from '../../components/competitionElements/Rules'
+import Teams from '../../components/competitionElements/Teams'
 
 const Container = styled.View`
   flex: 1;
@@ -108,7 +109,7 @@ const CompView = (props) => {
                         <TabText>Table</TabText>
                     </Tab>
                     <Tab onPress={() => handleTab(2)}>
-                        <TabText>Fixtures</TabText>
+                        <TabText>Stats</TabText>
                     </Tab>
                     <Tab onPress={() => handleTab(3)}>
                         <TabText>Rules</TabText>
@@ -128,9 +129,7 @@ const CompView = (props) => {
                 }
                 {activeTab === 3 && <Rules />}
                 {activeTab === 4 &&
-                    <View>
-                        <Text>Teams</Text>
-                    </View>
+                    <Teams />
                 }
             </BodyContainer>
         </Container>

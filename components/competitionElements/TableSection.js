@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
         //border: 2px solid #F4F2E0;
     },
     headText: {
-        fontSize: 12,
+        fontSize: 16,
         color: '#F4F2E0',
         //marginTop: 15,
         //lineHeight: 30,
     },
     headSubText: {
-        fontSize: 6,
+        fontSize: 8,
         color: '#818181',
         //marginTop: 15,
         //lineHeight: 30,
